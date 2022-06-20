@@ -1,0 +1,45 @@
+<mat-toolbar style="    position: relative;" class="mat-elevation-z6" color="primary">
+    <span>URL Shortener</span>
+    <span class="example-spacer"></span>
+    <button style="margin-left: auto;" mat-button routerLink="dashboard">
+      Home
+    </button>
+    <div style="border-left: 1px solid white;">
+        <button mat-button [matMenuTriggerFor]="userMenu"><div style="display: inline-block;
+          position: relative;
+          width: 25px;
+          height: 25px;
+          background: white;
+          margin-right: 5px;
+          border-radius: 50%;
+          top: -1px;"></div>{{user.name}}</button>
+        <mat-menu #userMenu="matMenu">
+            <button (click)="changePassword()" mat-menu-item>Change Password</button>
+            <button (click)="logout()" mat-menu-item>Logout</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+<div class="card-container">
+    <mat-card>
+        <mat-card-content>
+            <form style="padding: 20px;">
+                <h2>Shorten URL Now!</h2>
+                <mat-form-field class="full-width">
+                    <mat-label>URL</mat-label>
+                    <input type="text" matInput [(ngModel)]="url" [ngModelOptions]="{standalone: true}" placeholder="Ex. http://google.com">
+                </mat-form-field>
+                <mat-form-field style="margin-top: 10px;" class="full-width">
+                    <mat-label>Expiry</mat-label>
+                    <input type="date" matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="expiry">
+                </mat-form-field>
+                <div style="text-align: right;  margin-top: 10px;">
+                    <button (click)="shorten()" mat-raised-button color="primary">SHORTEN</button>
+                </div>
+                <ng-container *ngIf="shortenUrl"> 
+                    <h2>Your shorten URL is:</h2>
+                    <h3>{{shortenUrl}}</h3>
+                </ng-container>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,16 @@
+.login-back-container {
+    min-width: 100%;
+    min-height: 100vh;
+    // background-image: url('/assets/img/customs-container.jpg');
+    background-size: cover;
+    .dimmer {
+        min-width: 100%;
+        min-height: 100vh;
+        background: rgba(0, 0, 0, 0.2);
+        .card-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: 10%;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="login-back-container">
+    <div class="dimmer">
+        <div class="card-container">
+            <mat-card>
+                <mat-card-content>
+                    <form style="padding: 20px;">
+                        <h2>Sign In</h2>
+                        <mat-form-field class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Ex. pat@example.com">
+                        </mat-form-field>
+                        <mat-form-field style="margin-top: 10px;" class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="password">
+                        </mat-form-field>
+                        <div style="text-align: right;  margin-top: 10px;">
+                            <button (click)="login()" mat-raised-button color="primary">LOGIN</button>
+                        </div>
+                        <div style="text-align: center;">
+                            <a routerLink="/signup">Not Registered? Signup</a>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
